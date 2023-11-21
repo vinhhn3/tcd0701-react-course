@@ -4,7 +4,12 @@ export default class Search extends Component {
   render() {
     return (
       <div>
-        <h1>Search Component</h1>
+        <form>
+          <input type="text" placeholder="Search" />
+          <button className="btn btn-dark btn-block" type="submit">
+            Search
+          </button>
+        </form>
       </div>
     );
   }

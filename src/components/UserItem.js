@@ -10,7 +10,7 @@ export default class UserItem extends Component {
           className="round-img"
           style={{ width: "60px" }}
         />
-        <h2>{this.props.user.login}</h2>
+        <h3>{this.props.user.login}</h3>
         <a href={this.props.user.html_url} className="btn btn-primary btn-sm">
           More
         </a>
