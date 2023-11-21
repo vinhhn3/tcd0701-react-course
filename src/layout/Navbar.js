@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 const Navbar = () => {
   return (
@@ -6,10 +7,10 @@ const Navbar = () => {
       <h2>TCD0701 Github Finder</h2>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/">About</a>
+          <Link to="/about">About</Link>
         </li>
       </ul>
     </div>
