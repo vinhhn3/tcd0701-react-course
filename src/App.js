@@ -7,6 +7,7 @@ import Navbar from "./layout/Navbar";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import User from "./pages/User";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -32,6 +33,9 @@ const App = () => {
             </Route>
             <Route exact path="/about">
               <About />
+            </Route>
+            <Route exact path="/user/:loginId">
+              <User />
             </Route>
             <Route path="*">
               <NotFound />
