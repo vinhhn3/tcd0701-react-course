@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getUserDetailByLogin } from "../api/GitHubApi";
-
+import GithubContext from "../context/github/githubContext";
 function User() {
   const { loginId } = useParams();
-  const [user, setUser] = useState({});
+  const githubContext = useContext(GithubContext);
+  const { user, getUser } = githubContext;
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getUserDetailByLogin(loginId);
-        console.log(response.data);
-        setUser(response.data);
+        getUser(loginId);
       } catch (error) {
         // Handle error as needed
         console.error("Error fetching user details:", error);

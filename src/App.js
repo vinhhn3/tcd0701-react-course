@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Switch } from "react-router-dom/cjs/react-router-dom";
 import "./App.css";
-import { getUsersByLogin } from "./api/GitHubApi";
 import GithubState from "./context/github/githubState";
 import Navbar from "./layout/Navbar";
 import About from "./pages/About";
@@ -11,15 +10,6 @@ import NotFound from "./pages/NotFound";
 import User from "./pages/User";
 
 const App = () => {
-  const [users, setUsers] = useState([]);
-
-  const handleSearch = async (text) => {
-    console.log(text);
-    const response = await getUsersByLogin(text);
-    console.log(response.data.items);
-    setUsers(response.data.items);
-  };
-
   return (
     <GithubState>
       <Router>
@@ -28,7 +18,7 @@ const App = () => {
           <div className="container">
             <Switch>
               <Route exact path="/">
-                <Home handleSearch={handleSearch} users={users} />
+                <Home />
               </Route>
               <Route exact path="/about">
                 <About />

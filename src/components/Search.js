@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-
-const Search = (props) => {
+import React, { useContext, useState } from "react";
+import GithubContext from "../context/github/githubContext";
+const Search = () => {
+  const githubContext = useContext(GithubContext);
+  const { searchUsers } = githubContext;
   const [text, setText] = useState("");
-  const { handleSearch } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Stop form loading
-    handleSearch(text);
+    searchUsers(text);
   };
 
   const handleChange = (e) => {

@@ -2,12 +2,11 @@ import React from "react";
 import Search from "../components/Search";
 import Users from "../components/Users";
 
-function Home(props) {
-  const { handleSearch, users } = props;
+function Home() {
   return (
     <div>
-      <Search handleSearch={handleSearch} />
-      <Users users={users} />
+      <Search />
+      <Users />
     </div>
   );
 }
